@@ -20,7 +20,7 @@ class Weather
 
     public function getWeatherByCity(string $city): CityWeather
     {
-        $response =  $this->weatherClient->get('/v1/current.json', ['query' => ['q' => $city, 'key' => $this->apiKey, 'city' => $city]]);
+        $response =  $this->weatherClient->request('GET', '/v1/current.json', ['query' => ['q' => $city, 'key' => $this->apiKey]]);
         /* @var $weather CityWeather */
         $weather = $this->serializer->deserialize($response->getBody()->getContents(), CityWeather::class, 'json');
         $logString = sprintf('%s - Погода в %s: %s°C, %s', date('Y-m-d H:i:s'), $city, $weather->getCurrent()->getTemperature(), $weather->getCurrent()->getCondition()->getText());
