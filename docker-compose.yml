@@ -7,7 +7,6 @@ services:
     build: ./docker/php
     volumes:
       - .:/var/www/symfony
-    working_dir: /var/www/symfony
     environment:
       XDEBUG_CONFIG: "remote_host=10.10.12.1 remote_enable=1"
       PHP_IDE_CONFIG: "serverName=litvinov.local"
