@@ -5,8 +5,13 @@ namespace App\Services;
 
 use App\DTO\CityWeather;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use JMS\Serializer\SerializerInterface;
 use Psr\Log\LoggerInterface;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Exception\ConnectException;
 
 class Weather
 {
@@ -20,11 +25,16 @@ class Weather
 
     public function getWeatherByCity(string $city): CityWeather
     {
-        $response =  $this->weatherClient->request('GET', '/v1/current.json', ['query' => ['q' => $city, 'key' => $this->apiKey]]);
-        /* @var $weather CityWeather */
-        $weather = $this->serializer->deserialize($response->getBody()->getContents(), CityWeather::class, 'json');
-        $logString = sprintf('%s - Погода в %s: %s°C, %s', date('Y-m-d H:i:s'), $city, $weather->getCurrent()->getTemperature(), $weather->getCurrent()->getCondition()->getText());
-        $this->weatherLogger->debug($logString);
+        try {
+            $response =  $this->weatherClient->request('GET', '/v1/current.json', ['query' => ['q' => $city, 'key' => $this->apiKey]]);
+            /* @var $weather CityWeather */
+            $weather = $this->serializer->deserialize($response->getBody()->getContents(), CityWeather::class, 'json');
+            $logString = sprintf('%s - Погода в %s: %s°C, %s', date('Y-m-d H:i:s'), $city, $weather->getCurrent()->getTemperature(), $weather->getCurrent()->getCondition()->getText());
+            $this->weatherLogger->debug($logString);
+        } catch (GuzzleException $e) {
+            $this->weatherLogger->error($e->getMessage());
+            throw $e;
+        }
 
         return $weather;
     }

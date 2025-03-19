@@ -30,7 +30,10 @@ class WeatherTest extends TestCase
             ->willReturn($this->createMock(CityWeather::class));
 
         $loggerMock = $this->createMock(LoggerInterface::class);
-        $loggerMock->expects(self::once())->method('debug');
+        $loggerMock
+            ->expects(self::once())
+            ->method('debug')
+        ;
 
         $weatherService = new Weather(
             $guzzleMock,
