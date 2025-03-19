@@ -1,7 +1,7 @@
 FROM php:8.2-fpm
 
 # Устанавливаем рабочую директорию
-WORKDIR /var/www/symfony/app
+WORKDIR /var/www/symfony
 
 # Устанавливаем необходимые пакеты
 RUN apt-get update && apt-get install -y \
