@@ -1,7 +1,7 @@
 FROM php:8.2-fpm
 
 # Устанавливаем рабочую директорию
-WORKDIR /var/www/symfony/webapp
+WORKDIR /var/www/symfony/app
 
 # Устанавливаем необходимые пакеты
 RUN apt-get update && apt-get install -y \
@@ -19,6 +19,7 @@ RUN git config --global user.email "oznest@i.ua" \
     && git config --global user.name "Olexiy"
 
 ENV PATH="$HOME/.symfony5/bin:$PATH"
+#RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
 # Устанавливаем Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
