@@ -9,4 +9,6 @@ sh:
 test:
 	docker exec -it symfony_php php /var/www/symfony/app/bin/phpunit /var/www/symfony/app/tests
 install:
-	docker exec -it symfony_php
+	docker exec -it symfony_php sh -c "cd /var/www/symfony/app/app && composer install"
+recreate:
+	make down && make up
