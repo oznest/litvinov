@@ -11,11 +11,9 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class TestController extends AbstractController
 {
-
     public function __construct(
         private Weather $weather
     ){}
-
 
     #[Route('/weather/{city}', name: 'app_test')]
     public function index(Request $request, string $city): Response
