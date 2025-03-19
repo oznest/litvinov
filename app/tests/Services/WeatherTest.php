@@ -29,11 +29,14 @@ class WeatherTest extends TestCase
             ->method('deserialize')
             ->willReturn($this->createMock(CityWeather::class));
 
+        $loggerMock = $this->createMock(LoggerInterface::class);
+        $loggerMock->expects(self::once())->method('debug');
+
         $weatherService = new Weather(
             $guzzleMock,
             'key',
             $serializerMock,
-            $this->createMock(LoggerInterface::class)
+            $loggerMock
         );
 
         $weatherService->getWeatherByCity('London');
