@@ -34,6 +34,7 @@ class Current
     {
         return $this->humidity;
     }
+
     public function getWindKph(): float
     {
         return $this->windKph;

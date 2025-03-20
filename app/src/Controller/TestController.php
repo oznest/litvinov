@@ -2,12 +2,10 @@
 
 namespace App\Controller;
 
-use App\Form\CityForm;
 use App\Services\Weather;
 use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
 final class TestController extends AbstractController
