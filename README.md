@@ -8,3 +8,5 @@
 1) jms serializer bundle - для десериалізації json
 2) eightpoints/guzzle-bundle - для зручного конфігурування клієнтами + автовайрінг клієнтів зручний + логує запити у symfony devtools
 3) monolog bundle - для логуванн
+
+WEATHER_API_KEY i WEATHER_HOST задаються у файлі .env
