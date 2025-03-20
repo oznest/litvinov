@@ -1,5 +1,5 @@
 build:
-	docker-compose up -d --build
+	docker-compose up -d --build && make install
 up:
 	docker-compose up -d
 down:
