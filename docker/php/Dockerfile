@@ -20,7 +20,7 @@ RUN git config --global user.email "oznest@i.ua" \
 
 ENV PATH="$HOME/.symfony5/bin:$PATH"
 #RUN pecl install xdebug
-RUN docker-php-ext-enable xdebug
+#RUN docker-php-ext-enable xdebug
 # Устанавливаем Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
