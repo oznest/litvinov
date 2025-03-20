@@ -17,14 +17,18 @@ final class WeatherController extends AbstractController
     /**
      * @throws GuzzleException
      */
-    #[Route('/weather/{city}', name: 'app_test')]
+    #[Route('/weather/{city}', name: 'city_weather')]
     public function index(?string $city = null): Response
     {
-        $weather = $this->weather->getWeatherByCity($city);
+        try{
+            $weather = $this->weather->getWeatherByCity($city);
 
-        return $this->render('weather/index.html.twig', [
-            'weather' => $weather,
-            'city' => $city
-        ]);
+            return $this->render('weather/index.html.twig', [
+                'weather' => $weather,
+                'city' => $city
+            ]);
+        } catch (GuzzleException $e) {
+            return $this->render('weather/error.html.twig', ['message' => $e->getMessage()]);
+        }
     }
 }
