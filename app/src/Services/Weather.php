@@ -19,6 +19,11 @@ class Weather
     ) {
     }
 
+    /**
+     * Get weather by city name
+     *
+     * @throws GuzzleException
+     */
     public function getWeatherByCity(string $city): CityWeather
     {
         try {
