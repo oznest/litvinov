@@ -29,6 +29,20 @@ services:
     networks:
       - symfony
 
+  db:
+    image: mysql:latest
+    container_name: symfony-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony
+      MYSQL_USER: symfony_user
+      MYSQL_PASSWORD: symfony_pass
+#    volumes:
+#      - db_data:/var/lib/mysql
+    networks:
+      - symfony
+    ports:
+      - "3306:3306"
 networks:
   symfony:
     driver: bridge
