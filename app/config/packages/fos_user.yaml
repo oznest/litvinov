@@ -1,0 +1,9 @@
+#fos_user:
+#  db_driver: orm # or mongodb, propel, etc.
+#  firewall_name: main
+#  user_class: App\Entity\User
+#  from_email:
+#    address: "no-reply@example.com"
+#    sender_name: "Example"
+#  service:
+#    mailer: '@mailer.mailer'

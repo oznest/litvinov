@@ -45,6 +45,17 @@ services:
       - internal
     ports:
       - "3306:3306"
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"  # SMTP port
+      - "8025:8025"  # Web UI for MailHog
+    container_name: mailhog
+    restart: unless-stopped
+    networks:
+      - internal
+
 networks:
   internal:
     name: litvinov
