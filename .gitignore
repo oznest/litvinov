@@ -2,3 +2,5 @@
 /app/vendor/
 .idea
 /app/bin/.phpunit.result.cache
+/docker/mysql/performance_schema/events_waits_sum_91.sdi
+/docker/mysql/
