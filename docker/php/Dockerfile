@@ -20,9 +20,11 @@ RUN git config --global user.email "oznest@i.ua" \
 
 ENV PATH="$HOME/.symfony5/bin:$PATH"
 #RUN pecl install xdebug
-#RUN docker-php-ext-enable xdebug
+RUN docker-php-ext-enable xdebug
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 # Устанавливаем Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 
 # Открываем порт
 EXPOSE 9000
