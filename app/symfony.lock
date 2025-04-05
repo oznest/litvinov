@@ -35,6 +35,9 @@
             "ref": "7babb21a3928e44e485391907e3abc346804e0d2"
         }
     },
+    "friendsofsymfony/user-bundle": {
+        "version": "v4.0.0"
+    },
     "jms/serializer-bundle": {
         "version": "5.5",
         "recipe": {
@@ -45,6 +48,18 @@
         },
         "files": [
             "config/packages/jms_serializer.yaml"
+        ]
+    },
+    "lexik/jwt-authentication-bundle": {
+        "version": "3.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "2.5",
+            "ref": "e9481b233a11ef7e15fe055a2b21fd3ac1aa2bb7"
+        },
+        "files": [
+            "config/packages/lexik_jwt_authentication.yaml"
         ]
     },
     "nelmio/api-doc-bundle": {
