@@ -2,19 +2,22 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Services\Weather;
+use Doctrine\ORM\EntityManagerInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use \Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
 final class WeatherController extends AbstractController
 {
     public function __construct(
         private readonly Weather $weather,
-        private MailerInterface $mailer
+        private MailerInterface $mailer,
+        private EntityManagerInterface $entityManager
     ){}
 
     /**
@@ -28,6 +31,16 @@ final class WeatherController extends AbstractController
             ->to('recipient@example.com')
             ->subject('Test Email')
             ->text('This is a test email.');
+
+
+//        $user = new User();
+//        $user
+//            ->setEmail('oznest@i.ua')
+//            ->setRoles(['ROLE_ADMIN'])
+//            ->setPassword('$2y$13$kvze4Qr58kUMjfIlNBr6dexMunq9EVC7NsXtXPtpzupVRWLXx2G/K')
+//        ;
+//        $this->entityManager->persist($user);
+//        $this->entityManager->flush();
 
         $this->mailer->send($email);
         try{
