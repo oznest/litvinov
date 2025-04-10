@@ -6,7 +6,7 @@ use App\Repository\ProductRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
-class Product
+class Product implements \Stringable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -15,6 +15,9 @@ class Product
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $name = null;
+
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'products')]
+    private Category $category;
 
     public function getId(): ?int
     {
@@ -39,4 +42,21 @@ class Product
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(Category $category): void
+    {
+        $this->category = $category;
+    }
+
+
 }
