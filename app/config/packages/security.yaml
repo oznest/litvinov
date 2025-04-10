@@ -9,20 +9,27 @@ security:
                 class: App\Entity\User
                 property: email
     firewalls:
-        main:
-            # For allowing authentication
-            pattern: ^/
+        admin:
+            pattern: ^/admin
+            security: true
             form_login:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
             logout:
                 path: fos_user_security_logout
                 target: /
-            # Other firewall settings
-
+            # More security settings like roles and authentication
+        main:
+            pattern: ^/(?!admin).*$
+            form_login:
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+            logout:
+                path: fos_user_security_logout
     access_control:
+        - { path: ^/admin/login$, roles: PUBLIC_ACCESS }
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/admin/login, roles: ROLE_PUBLIC }
+
 
 when@test:
     security:
