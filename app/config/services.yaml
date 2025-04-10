@@ -25,3 +25,32 @@ services:
             $apiKey: '%env(WEATHER_API_KEY)%'
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+
+    App\Admin\:
+        resource: '../src/Admin'
+        tags: [ 'sonata.admin' ]
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    App\Admin\ProductAdmin:
+        arguments:
+            - ~
+            - App\Entity\Product
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Product', label: 'Product' }
+
+    App\Admin\CategoryAdmin:
+        arguments:
+            - ~
+            - App\Entity\Category
+            - ~
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: 'Product', label: 'Category' }
+
+
+    Sonata\AdminBundle\Controller\CRUDController:
+        tags: [ 'controller.service_arguments' ]
+        public: true
