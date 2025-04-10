@@ -9,6 +9,10 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     libpq-dev \
+    libicu-dev \
+    libonig-dev \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install intl \
     && docker-php-ext-install opcache
 
 ## Устанавливаем Symfony CLI
