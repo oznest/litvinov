@@ -3,11 +3,11 @@
         {{ app.user.email }}
     </span>
     |
-    <a href="{{ path('fos_user_security_logout') }}">
+    <a href="{{ path('logout') }}">
         <i class="fa fa-sign-out"></i> Logout
     </a>
 {% else %}
-    <a href="{{ path('fos_user_security_login') }}">
+    <a href="{{ path('login') }}">
         <i class="fa fa-sign-in"></i> Login
     </a>
 {% endif %}

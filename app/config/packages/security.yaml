@@ -12,12 +12,14 @@ security:
         admin:
             pattern: ^/admin
             security: true
+#            stateless: true
             form_login:
-                login_path: fos_user_security_login
-                check_path: fos_user_security_check
+                login_path: /admin/login
+                check_path: /admin/login
                 default_target_path: /admin
             logout:
-                path: fos_user_security_logout
+                path: /admin/logout
+                invalidate_session: true
                 target: /admin
             # More security settings like roles and authentication
         main:
