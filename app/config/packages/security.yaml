@@ -9,10 +9,25 @@ security:
                 class: App\Entity\User
                 property: email
     firewalls:
+        login:
+            pattern: ^/api/login$
+            stateless: true
+            json_login:
+                check_path: /api/login
+                username_path: email
+                password_path: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+        api:
+            pattern: ^/api
+            stateless: true
+            jwt: ~
+
         admin:
             pattern: ^/admin
             security: true
-#            stateless: true
+            #            stateless: true
             form_login:
                 login_path: /admin/login
                 check_path: /admin/login
@@ -21,15 +36,19 @@ security:
                 path: /admin/logout
                 invalidate_session: true
                 target: /admin
-            # More security settings like roles and authentication
+
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
         main:
-            pattern: ^/(?!admin).*$
-            form_login:
-                login_path: fos_user_security_login
-                check_path: fos_user_security_check
-            logout:
-                path: fos_user_security_logout
+            lazy: true
+            provider: app_user_provider
+            logout: true
     access_control:
+        - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/doc$, roles: PUBLIC_ACCESS }
+        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/admin/login$, roles: PUBLIC_ACCESS }
         - { path: ^/admin, roles: ROLE_ADMIN }
 
