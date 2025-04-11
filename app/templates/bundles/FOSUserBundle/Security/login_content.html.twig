@@ -4,10 +4,21 @@
 {% block sonata_left_side %}
 {% endblock %}
 
+{% block sonata_top_nav_menu %}
+{% endblock %}
+
+
+
+
 {% block sonata_page_content %}
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
+    <style>
+        .content-wrapper{
+            margin-left: 0;
+        }
+    </style>
     <div class="container mt-5" style="max-width: 400px;">
         <h2 class="text-center mb-4">Login</h2>
 
@@ -29,7 +40,6 @@
             </div>
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
             <button type="submit" class="btn btn-primary w-100 mt-4">Login</button>
         </form>
     </div>
