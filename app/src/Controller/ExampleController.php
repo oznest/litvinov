@@ -35,4 +35,36 @@ class ExampleController extends AbstractController
     {
         return $this->json(['message' => 'Hello, API!']);
     }
+
+    #[Route('/api/login', name: 'api_login1', methods: ['POST'])]
+    #[OA\Post(
+        summary: 'Login to get JWT token',
+        requestBody: new OA\RequestBody(
+            required: true,
+            content: new OA\JsonContent(
+                properties: [
+                    new OA\Property(property: 'email', type: 'string', example: 'oznest@iua'),
+                    new OA\Property(property: 'password', type: 'string', example: 'admin'),
+                ],
+                type: 'object'
+            )
+        ),
+        responses: [
+            new OA\Response(
+                response: 200,
+                description: 'Returns JWT token',
+                content: new OA\JsonContent(
+                    properties: [
+                        new OA\Property(property: 'token', type: 'string', example: 'eyJhbGciOiJIUzI1...'),
+                    ],
+                    type: 'object'
+                )
+            ),
+            new OA\Response(response: 401, description: 'Invalid credentials'),
+        ]
+    )]
+    public function apiLogin(): JsonResponse
+    {
+        return new JsonResponse(null, 401);
+    }
 }
