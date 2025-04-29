@@ -11,9 +11,10 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     libicu-dev \
     libonig-dev \
+    libbrotli-dev \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
-    && docker-php-ext-install opcache
+    && docker-php-ext-install opcache pdo pdo_mysql
 
 ## Устанавливаем Symfony CLI
 RUN curl -sS https://get.symfony.com/cli/installer | bash \
@@ -23,8 +24,12 @@ RUN git config --global user.email "oznest@i.ua" \
     && git config --global user.name "Olexiy"
 
 ENV PATH="$HOME/.symfony5/bin:$PATH"
-#RUN pecl install xdebug
+RUN pecl install xdebug swoole
+#RUN pecl install swoole
 RUN docker-php-ext-enable xdebug
+#RUN docker-php-ext-enable xdebug
+RUN docker-php-ext-enable swoole
+
 COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 # Устанавливаем Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

@@ -4,8 +4,75 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fa6b95c7a2f1ae285a06a0fc03e4951",
+    "content-hash": "e27f561635d0db0f8a68681a9b7dc062",
     "packages": [
+        {
+            "name": "beberlei/assert",
+            "version": "v3.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beberlei/assert.git",
+                "reference": "b5fd8eacd8915a1b627b8bfc027803f1939734dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beberlei/assert/zipball/b5fd8eacd8915a1b627b8bfc027803f1939734dd",
+                "reference": "b5fd8eacd8915a1b627b8bfc027803f1939734dd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-simplexml": "*",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "*",
+                "phpstan/phpstan": "*",
+                "phpunit/phpunit": ">=6.0.0",
+                "yoast/phpunit-polyfills": "^0.1.0"
+            },
+            "suggest": {
+                "ext-intl": "Needed to allow Assertion::count(), Assertion::isCountable(), Assertion::minCount(), and Assertion::maxCount() to operate on ResourceBundles"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/Assert/functions.php"
+                ],
+                "psr-4": {
+                    "Assert\\": "lib/Assert"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Richard Quadling",
+                    "email": "rquadling@gmail.com",
+                    "role": "Collaborator"
+                }
+            ],
+            "description": "Thin assertion library for input validation in business models.",
+            "keywords": [
+                "assert",
+                "assertion",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/beberlei/assert/issues",
+                "source": "https://github.com/beberlei/assert/tree/v3.3.3"
+            },
+            "time": "2024-07-15T13:18:35+00:00"
+        },
         {
             "name": "composer/semver",
             "version": "3.4.3",
@@ -1527,6 +1594,88 @@
             "time": "2024-06-18T11:25:52+00:00"
         },
         {
+            "name": "friendsofphp/proxy-manager-lts",
+            "version": "v1.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfPHP/proxy-manager-lts.git",
+                "reference": "2c8a6cffc3220e99352ad958fe7cf06bf6f7690f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfPHP/proxy-manager-lts/zipball/2c8a6cffc3220e99352ad958fe7cf06bf6f7690f",
+                "reference": "2c8a6cffc3220e99352ad958fe7cf06bf6f7690f",
+                "shasum": ""
+            },
+            "require": {
+                "laminas/laminas-code": "~3.4.1|^4.0",
+                "php": ">=7.1",
+                "symfony/filesystem": "^4.4.17|^5.0|^6.0|^7.0"
+            },
+            "conflict": {
+                "laminas/laminas-stdlib": "<3.2.1",
+                "zendframework/zend-stdlib": "<3.2.1"
+            },
+            "replace": {
+                "ocramius/proxy-manager": "^2.1"
+            },
+            "require-dev": {
+                "ext-phar": "*",
+                "symfony/phpunit-bridge": "^5.4|^6.0|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/Ocramius/ProxyManager",
+                    "name": "ocramius/proxy-manager"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ProxyManager\\": "src/ProxyManager"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com",
+                    "homepage": "https://ocramius.github.io/"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                }
+            ],
+            "description": "Adding support for a wider range of PHP versions to ocramius/proxy-manager",
+            "homepage": "https://github.com/FriendsOfPHP/proxy-manager-lts",
+            "keywords": [
+                "aop",
+                "lazy loading",
+                "proxy",
+                "proxy pattern",
+                "service proxies"
+            ],
+            "support": {
+                "issues": "https://github.com/FriendsOfPHP/proxy-manager-lts/issues",
+                "source": "https://github.com/FriendsOfPHP/proxy-manager-lts/tree/v1.0.18"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Ocramius",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/ocramius/proxy-manager",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-03-20T12:50:41+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "7.9.2",
             "source": {
@@ -2239,6 +2388,69 @@
                 "source": "https://github.com/KnpLabs/KnpMenuBundle/tree/v3.5.0"
             },
             "time": "2024-12-25T16:34:19+00:00"
+        },
+        {
+            "name": "laminas/laminas-code",
+            "version": "4.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laminas/laminas-code.git",
+                "reference": "1793e78dad4108b594084d05d1fb818b85b110af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laminas/laminas-code/zipball/1793e78dad4108b594084d05d1fb818b85b110af",
+                "reference": "1793e78dad4108b594084d05d1fb818b85b110af",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^2.0.1",
+                "ext-phar": "*",
+                "laminas/laminas-coding-standard": "^3.0.0",
+                "laminas/laminas-stdlib": "^3.18.0",
+                "phpunit/phpunit": "^10.5.37",
+                "psalm/plugin-phpunit": "^0.19.0",
+                "vimeo/psalm": "^5.15.0"
+            },
+            "suggest": {
+                "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
+                "laminas/laminas-stdlib": "Laminas\\Stdlib component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laminas\\Code\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Extensions to the PHP Reflection API, static code scanning, and code generation",
+            "homepage": "https://laminas.dev",
+            "keywords": [
+                "code",
+                "laminas",
+                "laminasframework"
+            ],
+            "support": {
+                "chat": "https://laminas.dev/chat",
+                "docs": "https://docs.laminas.dev/laminas-code/",
+                "forum": "https://discourse.laminas.dev",
+                "issues": "https://github.com/laminas/laminas-code/issues",
+                "rss": "https://github.com/laminas/laminas-code/releases.atom",
+                "source": "https://github.com/laminas/laminas-code"
+            },
+            "funding": [
+                {
+                    "url": "https://funding.communitybridge.org/projects/laminas-project",
+                    "type": "community_bridge"
+                }
+            ],
+            "time": "2024-11-20T13:15:13+00:00"
         },
         {
             "name": "lcobucci/clock",
@@ -4305,6 +4517,192 @@
                 }
             ],
             "time": "2024-09-09T15:02:15+00:00"
+        },
+        {
+            "name": "swoole-bundle/swoole-bundle",
+            "version": "v0.24.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony-swoole/swoole-bundle.git",
+                "reference": "f2334024fa0d1a126f12b83d8595c2f8919a9ae8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony-swoole/swoole-bundle/zipball/f2334024fa0d1a126f12b83d8595c2f8919a9ae8",
+                "reference": "f2334024fa0d1a126f12b83d8595c2f8919a9ae8",
+                "shasum": ""
+            },
+            "require": {
+                "beberlei/assert": "^3.3.3",
+                "ext-json": "*",
+                "laminas/laminas-code": "^4.7||^4.8",
+                "monolog/monolog": "^3.3",
+                "php": "^8.2",
+                "symfony/cache": "^6.4|^7.2",
+                "symfony/config": "^6.4|^7.2",
+                "symfony/console": "^6.4|^7.2",
+                "symfony/dependency-injection": "^6.4|^7.2",
+                "symfony/filesystem": "^6.4|^7.2",
+                "symfony/http-foundation": "^6.4|^7.2",
+                "symfony/http-kernel": "^6.4|^7.2",
+                "symfony/process": "^6.4|^7.2",
+                "symfony/proxy-manager-bridge": "^6.4|^7.2",
+                "upscale/ext-openswoole": "^25.2.0",
+                "upscale/ext-swoole": "^6.0.0"
+            },
+            "conflict": {
+                "amphp/amp": "<3.1.0",
+                "amphp/dns": "<2.4.0",
+                "amphp/process": "<2.0.3",
+                "amphp/socket": "<2.3.1",
+                "laravel/serializable-closure": "<1.3.7",
+                "revolt/event-loop": "<1.0.7",
+                "symfony/cache": "<6.4.18",
+                "symfony/cache-contracts": "<3.5.1",
+                "symfony/clock": "<6.4.13",
+                "symfony/config": "<6.4.14",
+                "symfony/console": "<6.4.17",
+                "symfony/dependency-injection": "<6.4.16",
+                "symfony/doctrine-bridge": "<6.4.18",
+                "symfony/dotenv": "<6.4.16",
+                "symfony/error-handler": "<6.4.18",
+                "symfony/event-dispatcher": "<6.4.13",
+                "symfony/event-dispatcher-contracts": "<3.5.1",
+                "symfony/expression-language": "<6.4.13",
+                "symfony/filesystem": "<6.4.13",
+                "symfony/framework-bundle": "<6.4.18",
+                "symfony/http-foundation": "<6.4.18",
+                "symfony/http-kernel": "<6.4.18",
+                "symfony/messenger": "<6.4.16",
+                "symfony/monolog-bridge": "<6.4.13",
+                "symfony/polyfill-php83": "<1.31.0",
+                "symfony/process": "<6.4.15",
+                "symfony/routing": "<6.4.18",
+                "symfony/stopwatch": "<6.4.13",
+                "symfony/string": "<6.4.15",
+                "symfony/translation-contracts": "<3.5.1",
+                "symfony/twig-bridge": "<6.4.17",
+                "symfony/twig-bundle": "<6.4.13",
+                "symfony/var-dumper": "<6.4.18",
+                "symfony/var-exporter": "<6.4.13",
+                "symfony/yaml": "<6.4.18"
+            },
+            "require-dev": {
+                "blackfire/php-sdk": "^2.5",
+                "doctrine/dbal": "^3.7 || ^4.0",
+                "doctrine/doctrine-bundle": "^2.7",
+                "doctrine/doctrine-migrations-bundle": "^3.2.4",
+                "doctrine/migrations": "^3.5",
+                "doctrine/orm": "^2.17 || ^3.0",
+                "doctrine/persistence": "^3.2",
+                "ext-ffi": "^8.2",
+                "ext-intl": "*",
+                "friendsofphp/php-cs-fixer": "^3.7",
+                "jangregor/phpstan-prophecy": "^2.0",
+                "openswoole/core": "^22.2",
+                "openswoole/ide-helper": "^22.1.5",
+                "phpro/grumphp": "^2.10",
+                "phpspec/prophecy": "^1.17",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-beberlei-assert": "^2.0",
+                "phpstan/phpstan-doctrine": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/php-code-coverage": "^10.1",
+                "phpunit/phpcov": "^9.0",
+                "phpunit/phpunit": "^10.5.45",
+                "ramsey/uuid": "^4.7",
+                "rector/rector": "^2.0",
+                "slevomat/coding-standard": "^8.14",
+                "squizlabs/php_codesniffer": "^3.8",
+                "swoole-bundle/resetter-bundle": "^1.0",
+                "swoole-bundle/z-engine": "^8.2.1|^8.3|^8.4",
+                "swoole/ide-helper": "^6.0.0",
+                "symfony/debug-bundle": "^6.4|^7.2",
+                "symfony/doctrine-messenger": "^6.4|^7.2",
+                "symfony/error-handler": "^6.4|^7.2",
+                "symfony/flex": "^2.4.7",
+                "symfony/framework-bundle": "^6.4|^7.2",
+                "symfony/messenger": "^6.4|^7.2",
+                "symfony/monolog-bridge": "^6.4|^7.2",
+                "symfony/monolog-bundle": "^3.10",
+                "symfony/stopwatch": "^6.4|^7.2",
+                "symfony/twig-bridge": "^6.4|^7.2",
+                "symfony/twig-bundle": "^6.4|^7.2",
+                "symfony/var-dumper": "^6.4|^7.2",
+                "symfony/var-exporter": "^6.4|^7.2",
+                "symfony/web-profiler-bundle": "^6.4|^7.2",
+                "symfony/yaml": "^6.4|^7.2",
+                "tideways/ext-tideways-stubs": "^5.5",
+                "twig/twig": "^3.19",
+                "upscale/swoole-blackfire": "^4.3"
+            },
+            "suggest": {
+                "doctrine/orm": "For using Entity Manager Handler",
+                "ext-inotify": "To enable HMR",
+                "swoole-bundle/resetter-bundle": "To be able to recover Doctrine Entity Managers from errors",
+                "swoole-bundle/z-engine": "To be able to use coroutines.",
+                "symfony/error-handler": "To use Symfony Error Handler",
+                "symfony/messenger": "For using Symfony Messenger Swoole Task Transport.",
+                "upscale/swoole-blackfire": "To enable Blackfire profiling"
+            },
+            "type": "library",
+            "extra": {
+                "symfony": {
+                    "require": "6.4.*"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "SwooleBundle\\SwooleBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Fris",
+                    "email": "rasta@lj.sk",
+                    "homepage": "https://github.com/Rastusik"
+                },
+                {
+                    "name": "Konrad Obal",
+                    "email": "konrad.obal@gmail.com",
+                    "homepage": "https://github.com/k911"
+                }
+            ],
+            "description": "Open/Swoole Symfony Bundle",
+            "homepage": "https://github.com/symfony-swoole/swoole-bundle",
+            "keywords": [
+                "async",
+                "bundle",
+                "http",
+                "openswoole",
+                "php",
+                "server",
+                "swoole"
+            ],
+            "support": {
+                "issues": "https://github.com/symfony-swoole/swoole-bundle/issues",
+                "source": "https://github.com/symfony-swoole/swoole-bundle/tree/v0.24.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Rastusik",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/symfony-swoole",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-03-01T17:11:43+00:00"
         },
         {
             "name": "symfony/asset",
@@ -7795,6 +8193,73 @@
             "time": "2025-01-27T11:08:17+00:00"
         },
         {
+            "name": "symfony/proxy-manager-bridge",
+            "version": "v6.4.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/proxy-manager-bridge.git",
+                "reference": "8932b572e147e80fb498045c580eb14215197529"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/proxy-manager-bridge/zipball/8932b572e147e80fb498045c580eb14215197529",
+                "reference": "8932b572e147e80fb498045c580eb14215197529",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofphp/proxy-manager-lts": "^1.0.2",
+                "php": ">=8.1",
+                "symfony/dependency-injection": "^6.3|^7.0",
+                "symfony/deprecation-contracts": "^2.5|^3"
+            },
+            "require-dev": {
+                "symfony/config": "^6.1|^7.0"
+            },
+            "type": "symfony-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bridge\\ProxyManager\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides integration for ProxyManager with various Symfony components",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/proxy-manager-bridge/tree/v6.4.13"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-25T14:18:03+00:00"
+        },
+        {
             "name": "symfony/routing",
             "version": "v7.2.3",
             "source": {
@@ -9956,6 +10421,46 @@
                 }
             ],
             "time": "2025-02-13T08:34:43+00:00"
+        },
+        {
+            "name": "upscale/ext-swoole",
+            "version": "v6.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/upscalesoftware/ext-swoole.git",
+                "reference": "57a87d3df1bf60dd00556a137c523b73f9df8223"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/upscalesoftware/ext-swoole/zipball/57a87d3df1bf60dd00556a137c523b73f9df8223",
+                "reference": "57a87d3df1bf60dd00556a137c523b73f9df8223",
+                "shasum": ""
+            },
+            "require": {
+                "ext-swoole": "self.version"
+            },
+            "replace": {
+                "upscale/ext-openswoole": "*"
+            },
+            "type": "metapackage",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Wrapper for ext-swoole interchangeable with ext-openswoole",
+            "keywords": [
+                "Open Swoole",
+                "ext-openswoole",
+                "ext-swoole",
+                "extension",
+                "openswoole",
+                "swoole"
+            ],
+            "support": {
+                "issues": "https://github.com/upscalesoftware/ext-swoole/issues",
+                "source": "https://github.com/upscalesoftware/ext-swoole/tree/v6.0.2"
+            },
+            "time": "2025-03-01T00:18:00+00:00"
         },
         {
             "name": "webmozart/assert",
